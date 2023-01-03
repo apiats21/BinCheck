@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp"
+    app:contentPadding="10dp"
+    app:cardBackgroundColor="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+    <TextView
+        android:id="@+id/schemeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:text="@string/scheme_network"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/schemeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="8dp"
+        android:text="@string/empty_value"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/schemeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/schemeTitle"/>
+
+    <TextView
+        android:id="@+id/brandTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:fontFamily="serif-monospace"
+        android:textColor="@android:color/darker_gray"
+        android:text="@string/brand"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toBottomOf="@+id/schemeTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/brandTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="@string/empty_value"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/brandTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/brandTitleTextView"/>
+
+    <TextView
+        android:id="@+id/cardNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif-monospace"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        android:text="@string/card_number"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/brandTextView"/>
+
+    <TextView
+        android:id="@+id/cardLengthTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="serif-monospace"
+        android:textColor="@android:color/darker_gray"
+        android:text="@string/length"
+        android:textSize="15sp"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="@+id/cardNumber"
+        app:layout_constraintTop_toBottomOf="@+id/cardNumber"/>
+
+    <TextView
+        android:id="@+id/cardLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:text="@string/empty_value"
+        app:layout_constraintStart_toStartOf="@+id/cardLengthTitle"
+        app:layout_constraintTop_toBottomOf="@+id/cardLengthTitle"/>
+
+    <TextView
+        android:id="@+id/cardLuhnTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:textColor="@android:color/darker_gray"
+        android:fontFamily="serif-monospace"
+        android:textSize="15sp"
+        android:text="@string/luhn"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toEndOf="@+id/cardLengthTitle"
+        app:layout_constraintTop_toTopOf="@+id/cardLengthTitle"/>
+
+    <TextView
+        android:id="@+id/cardLuhnYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="@string/yes"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/cardLuhnTitle"
+        app:layout_constraintTop_toBottomOf="@+id/cardLuhnTitle"/>
+
+    <TextView
+        android:id="@+id/cardLuhnSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textColor="@android:color/darker_gray"
+        android:text="@string/splash"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/cardLuhnYes"
+        app:layout_constraintTop_toBottomOf="@+id/cardLuhnTitle"/>
+
+    <TextView
+        android:id="@+id/cardLuhnNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textColor="@android:color/darker_gray"
+        android:text="@string/no"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/cardLuhnSplash"
+        app:layout_constraintTop_toBottomOf="@+id/cardLuhnTitle"/>
+
+    <TextView
+        android:id="@+id/bankTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif-monospace"
+        android:textColor="@android:color/darker_gray"
+        android:text="@string/bank"
+        android:textSize="18sp"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardLength"/>
+
+    <TextView
+        android:id="@+id/bankTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:text="@string/empty_value"
+        app:layout_constraintStart_toStartOf="@+id/bankTitle"
+        app:layout_constraintTop_toBottomOf="@+id/bankTitle"/>
+
+    <TextView
+        android:id="@+id/bankWebsiteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="4dp"
+        android:textSize="16sp"
+        android:autoLink="web"
+        android:text="@string/empty_value"
+        app:layout_constraintStart_toStartOf="@+id/bankTextView"
+        app:layout_constraintTop_toBottomOf="@+id/bankTextView"/>
+
+    <TextView
+        android:id="@+id/bankPhoneTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="4dp"
+        android:text="@string/empty_value"
+        android:textSize="16sp"
+        android:autoLink="phone"
+        app:layout_constraintStart_toStartOf="@+id/bankWebsiteTextView"
+        app:layout_constraintTop_toBottomOf="@+id/bankWebsiteTextView"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="schemeTitle,schemeTextView,brandTitleTextView,
+        brandTextView,cardNumber,cardLuhnTitle,cardLuhnNo,bankTitle,
+        bankTextView,bankWebsiteTextView,bankPhoneTextView"/>
+
+    <TextView
+        android:id="@+id/typeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:fontFamily="serif-monospace"
+        android:textColor="@android:color/darker_gray"
+        android:text="@string/type"
+        android:textSize="16sp"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/typeDebit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="8dp"
+        android:text="@string/debit"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/typeTitle"
+        app:layout_constraintTop_toBottomOf="@+id/typeTitle"/>
+
+    <TextView
+        android:id="@+id/typeSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginStart="4dp"
+        android:text="@string/splash"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/typeDebit"
+        app:layout_constraintTop_toTopOf="@+id/typeDebit"/>
+
+    <TextView
+        android:id="@+id/typeCredit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginStart="4dp"
+        android:text="@string/credit"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/typeSplash"
+        app:layout_constraintTop_toTopOf="@+id/typeDebit"/>
+
+    <TextView
+        android:id="@+id/prepaidTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="50dp"
+        android:fontFamily="serif-monospace"
+        android:textColor="@android:color/darker_gray"
+        android:text="@string/prepaid"
+        android:textSize="16sp"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        app:layout_constraintTop_toBottomOf="@+id/typeDebit"/>
+
+    <TextView
+        android:id="@+id/prepaidYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginTop="8dp"
+        android:text="@string/yes"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/prepaidTitle"
+        app:layout_constraintTop_toBottomOf="@+id/prepaidTitle"/>
+
+    <TextView
+        android:id="@+id/prepaid_Splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginStart="4dp"
+        android:text="@string/splash"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/prepaidYes"
+        app:layout_constraintTop_toTopOf="@+id/prepaidYes"/>
+
+    <TextView
+        android:id="@+id/prepaid_No"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginStart="4dp"
+        android:text="@string/no"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/prepaid_Splash"
+        app:layout_constraintTop_toTopOf="@+id/prepaidYes"/>
+
+    <TextView
+        android:id="@+id/country_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="50dp"
+        android:fontFamily="serif-monospace"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        android:text="@string/country"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        app:layout_constraintTop_toBottomOf="@+id/prepaidYes"/>
+
+    <TextView
+        android:id="@+id/country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="50dp"
+        android:text="@string/empty_value"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/barrier"
+        app:layout_constraintTop_toBottomOf="@+id/country_Title"/>
+
+    <TextView
+        android:id="@+id/countryLatitude_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/darker_gray"
+        android:fontFamily="serif-monospace"
+        android:textSize="12sp"
+        android:text="@string/latitude"
+        app:layout_constraintStart_toStartOf="@+id/country"
+        app:layout_constraintTop_toBottomOf="@+id/country"/>
+
+    <TextView
+        android:id="@+id/countryLatitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/black"
+        android:fontFamily="serif-monospace"
+        android:textSize="12sp"
+        android:text="@string/empty_value"
+        app:layout_constraintStart_toEndOf="@+id/countryLatitude_Title"
+        app:layout_constraintTop_toBottomOf="@+id/country"/>
+
+    <TextView
+        android:id="@+id/countryCommaTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/darker_gray"
+        android:fontFamily="serif-monospace"
+        android:textSize="14sp"
+        android:text="@string/comma"
+        app:layout_constraintStart_toEndOf="@+id/countryLatitude"
+        app:layout_constraintTop_toBottomOf="@+id/country"/>
+
+    <TextView
+        android:id="@+id/countryLongitudeTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="60dp"
+        android:textColor="@android:color/darker_gray"
+        android:fontFamily="serif-monospace"
+        android:textSize="14sp"
+        android:text="@string/longitude"
+        app:layout_constraintStart_toStartOf="@id/barrier"
+        app:layout_constraintTop_toBottomOf="@+id/countryLatitude_Title"/>
+
+    <TextView
+        android:id="@+id/countryLongitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/black"
+        android:fontFamily="serif-monospace"
+        android:textSize="14sp"
+        android:text="@string/empty_value"
+        app:layout_constraintStart_toEndOf="@+id/countryLongitudeTitleTextView"
+        app:layout_constraintTop_toBottomOf="@+id/countryLatitude_Title"/>
+
+    <TextView
+        android:id="@+id/countryParenthesisTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/darker_gray"
+        android:fontFamily="serif-monospace"
+        android:textSize="14sp"
+        android:text="@string/parenthesis"
+        app:layout_constraintStart_toEndOf="@+id/countryLongitude"
+        app:layout_constraintTop_toBottomOf="@+id/countryLatitude_Title"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
